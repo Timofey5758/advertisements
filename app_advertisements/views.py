@@ -26,11 +26,11 @@ def advertisement_post(request):
     return render(request, 'app_advertisements/advertisement-post.html', context)
 
 def register(request):
-    return render(request, 'register.html')
+    return render(request, 'app_auth/register.html')
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'app_auth/login.html')
 
 def profile(request):
-    return render(request, 'profile.html')
+    return render(request, 'app_auth/profile.html')
 # Create your views here.
