@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% load static %}
+
 
 {% block title %}
-Разместить объявление
+Профиль
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="{% url 'advertisement-post' %}">
+      <a class="nav-link" href="{% url 'advertisement-post' %}">
         <span style="font-weight: bold;">Разместить объявление</span>
       </a>
     </li>
@@ -33,7 +33,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="profile.html">
+      <a class="nav-link active" aria-current="page" href="profile.html">
         <span style="font-weight: bold;">Профиль</span>
       </a>
     </li>
@@ -43,26 +43,9 @@
       </a>
     </li>
   </ul>
-  <div class="row">
-    <div class="col" style="margin: 50px;">
-      <div class="display-2">
-        <span class="badge bg-primary">Сообщите миру об этом в этой форме</span>
-      </div>
-    </div>
+<div class="col" style="margin: 50px;">
+  <div class="display-2">
+    <span class="badge bg-primary">Сейчас вы находитесь на сайте под ником {{ user }}.</span>
   </div>
-  <div class="container">
-    <form method="post" enctype="multipart/form-data"> {% csrf_token%}
-      <div class="row mb-3 offset-sm-4">
-        <div class="col-6">
-          {{ form.as_p }}
-        </div>
-      <div class="row mb-3 offset-sm-2">
-        <div class="col">
-          <button type="submit" class="btn btn-success">Принять</button>
-        </div>
-      </div>
-    </form>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-</body>
+</div>
 {% endblock %}
